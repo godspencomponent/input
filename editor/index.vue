@@ -1,10 +1,5 @@
 <template>
   <div class="component-editor">
-    <el-card class="box-card" header='hello'>
-      <div>
-        say something
-      </div>
-    </el-card>
   </div>
 </template>
 

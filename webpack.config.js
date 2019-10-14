@@ -167,10 +167,8 @@ if (process.env.NODE_ENV === 'development') {
 if (process.env.NODE_ENV === 'production') {
   module.exports = merge(config, {
     entry: {
-      index: './src/index.vue',
-      
-      editor: './editor/index.vue'
-      
+      index: './src/index.vue'
+      // editor: './editor/index.vue'
     },
     output: {
       path: path.resolve(__dirname, './dist'),
