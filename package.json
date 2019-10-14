@@ -2,8 +2,8 @@
   "name": "input",
   "namespace": "Luffy",
   "label": "",
-  "version": "1.0.0",
-  "description": "hello world",
+  "version": "1.0.1",
+  "description": "输入框",
   "private": true,
   "keywords": [],
   "scripts": {
@@ -13,6 +13,8 @@
     "dist": "npm run build"
   },
   "style": {
+    "width": "200px",
+    "height": "40px"
   },
   "dependencies": {
     "element-ui": "2.4.6",
