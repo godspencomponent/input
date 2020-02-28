@@ -21,7 +21,7 @@ function normalizeName (name) {
   return name.replace(/[-_]+(\w)/g, (m, p) => p.toUpperCase())
 }
 
-const COMPONENT_PATH = `${normalizeName(pkg.namespace)}/${normalizeName(pkg.name)}@${pkg.version}`
+const COMPONENT_PATH = '__NAMESPACE__/__NAME__@__VERSION__'
 
 let config = {
   module: {
@@ -111,7 +111,7 @@ let config = {
     extensions: ['*', '.js', '.vue', '.json']
   },
   externals: {
-    'godspen-lib': "$GP"
+    'godspen-lib': '$GP'
   },
   performance: {
     hints: false
@@ -167,12 +167,12 @@ if (process.env.NODE_ENV === 'development') {
 if (process.env.NODE_ENV === 'production') {
   module.exports = merge(config, {
     entry: {
-      index: './src/index.vue'
-      // editor: './editor/index.vue'
+      index: './src/index.vue',
+      editor: './editor/index.vue'
     },
     output: {
       path: path.resolve(__dirname, './dist'),
-      publicPath: `<OSS_BUCKET>${COMPONENT_PATH.replace('@', '/')}/`, // <OSS_BUCKET>占位符请勿修改，文件上传时会自动替换
+      publicPath: `__OSS_BUCKET__${COMPONENT_PATH.replace('@', '/')}/`, // __OSS_BUCKET__占位符请勿修改，文件上传时会自动替换
       library: COMPONENT_PATH + '[name]',
       libraryTarget: 'umd',
       filename: '[name].js'

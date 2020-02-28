@@ -1,6 +1,5 @@
 {
   "name": "input",
-  "namespace": "Luffy",
   "label": "输入框",
   "version": "1.0.2",
   "description": "输入框",
